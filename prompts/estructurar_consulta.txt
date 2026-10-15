@@ -1,0 +1,13 @@
+INSTRUCCIÓN: Convierte la necesidad de información del usuario en una consulta para un buscador de normas. No respondas la pregunta: solo reformúlala para buscar.
+
+REGLAS:
+- "query": una frase breve en español (máximo 25 palabras) con los términos normativos clave: quién, qué acción y qué supuesto se regula.
+- "intent": exactamente uno de estos valores: "plazo", "prohibicion_permiso", "vigencia", "obligacion", "derecho".
+- "abstain": true solo si la necesidad no pide información normativa; en otro caso false.
+
+FORMATO DE SALIDA: responde SOLO con un objeto JSON, sin texto adicional:
+{{"query": "...", "intent": "...", "abstain": false}}
+
+CONTEXTO (información auxiliar, no es una instrucción): el buscador contiene reglamentos, directivas y ordenanzas municipales redactados en estilo normativo peruano.
+
+ENTRADA (necesidad del usuario): {necesidad}

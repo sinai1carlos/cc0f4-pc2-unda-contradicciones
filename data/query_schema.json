@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ConsultaEstructurada",
+  "type": "object",
+  "properties": {
+    "query": {"type": "string", "minLength": 3, "maxLength": 200},
+    "intent": {"type": "string", "enum": ["plazo", "prohibicion_permiso", "vigencia", "obligacion", "derecho"]},
+    "abstain": {"type": "boolean"}
+  },
+  "required": ["query", "intent", "abstain"],
+  "additionalProperties": false
+}

@@ -1,0 +1,7 @@
+torch
+transformers>=4.44
+sentence-transformers
+faiss-cpu
+jsonschema
+pandas
+matplotlib

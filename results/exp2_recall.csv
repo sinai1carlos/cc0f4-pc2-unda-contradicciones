@@ -1,0 +1,4 @@
+condicion,target_words,R@1,R@3,R@5,n_fragmentos
+small,100,0.5,1.0,1.0,49
+baseline,180,0.5,1.0,1.0,20
+large,320,0.5,1.0,1.0,11

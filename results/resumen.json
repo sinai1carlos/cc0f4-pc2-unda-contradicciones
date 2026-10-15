@@ -1,0 +1,363 @@
+{
+  "config": {
+    "run_real_retrieval": true,
+    "run_real_llm": true,
+    "dense_implementation": "E5 + FAISS IndexFlatIP",
+    "generator": "Qwen/Qwen2.5-0.5B-Instruct",
+    "decoding_llm": "greedy",
+    "max_new_tokens": 96,
+    "normalizacion": "L2",
+    "similitud": "producto interno (= coseno)",
+    "target_words": {
+      "small": 100,
+      "baseline": 180,
+      "large": 320
+    },
+    "overlap_passages": 1,
+    "baseline": "baseline",
+    "k": [
+      1,
+      3,
+      5
+    ],
+    "n_docs": 10,
+    "n_passages": 76,
+    "n_queries": 6,
+    "relevantes_por_query": 2
+  },
+  "segmentacion": [
+    {
+      "condicion": "small",
+      "target_words": 100,
+      "overlap_passages": 1,
+      "n_fragmentos": 49,
+      "palabras_media": 80.2,
+      "palabras_min": 50,
+      "palabras_max": 98,
+      "fragmentos_por_doc": 4.9,
+      "tokens_max": 146.0
+    },
+    {
+      "condicion": "baseline",
+      "target_words": 180,
+      "overlap_passages": 1,
+      "n_fragmentos": 20,
+      "palabras_media": 144.4,
+      "palabras_min": 91,
+      "palabras_max": 177,
+      "fragmentos_por_doc": 2.0,
+      "tokens_max": 248.0
+    },
+    {
+      "condicion": "large",
+      "target_words": 320,
+      "overlap_passages": 1,
+      "n_fragmentos": 11,
+      "palabras_media": 234.5,
+      "palabras_min": 139,
+      "palabras_max": 288,
+      "fragmentos_por_doc": 1.1,
+      "tokens_max": 412.0
+    }
+  ],
+  "exp1": {
+    "json_parseable_rate": 1.0,
+    "schema_valid_rate": 0.333,
+    "intent_accuracy": 0.0,
+    "abstain_rate": 0.0,
+    "mean_Q0_R@1": 0.5,
+    "mean_Q0_R@3": 1.0,
+    "mean_Q0_R@5": 1.0,
+    "mean_Q1_R@1": 0.167,
+    "mean_Q1_R@3": 0.25,
+    "mean_Q1_R@5": 0.333,
+    "mean_Q1fb_R@1": 0.5,
+    "mean_Q1fb_R@3": 0.917,
+    "mean_Q1fb_R@5": 1.0,
+    "efecto_R@3": {
+      "degrada": 5,
+      "conserva": 1
+    }
+  },
+  "exp1_por_consulta": [
+    {
+      "query_id": "N1",
+      "Q1_ejecutada": false,
+      "Q0_R@1": 0.5,
+      "Q0_R@3": 1.0,
+      "Q0_R@5": 1.0,
+      "Q1_R@1": 0.0,
+      "Q1_R@3": 0.0,
+      "Q1_R@5": 0.0,
+      "Q1fb_R@1": 0.5,
+      "Q1fb_R@3": 1.0,
+      "Q1fb_R@5": 1.0,
+      "Q0_rank_A": 1,
+      "Q0_rank_B": 2,
+      "Q1_rank_A": null,
+      "Q1_rank_B": null,
+      "top3_comunes": 0,
+      "efecto_R@3": "degrada",
+      "Q0_top3": [
+        "D01-C002",
+        "D02-C002",
+        "D01-C001"
+      ],
+      "Q1_top3": []
+    },
+    {
+      "query_id": "N2",
+      "Q1_ejecutada": false,
+      "Q0_R@1": 0.5,
+      "Q0_R@3": 1.0,
+      "Q0_R@5": 1.0,
+      "Q1_R@1": 0.0,
+      "Q1_R@3": 0.0,
+      "Q1_R@5": 0.0,
+      "Q1fb_R@1": 0.5,
+      "Q1fb_R@3": 1.0,
+      "Q1fb_R@5": 1.0,
+      "Q0_rank_A": 1,
+      "Q0_rank_B": 3,
+      "Q1_rank_A": null,
+      "Q1_rank_B": null,
+      "top3_comunes": 0,
+      "efecto_R@3": "degrada",
+      "Q0_top3": [
+        "D03-C001",
+        "D03-C002",
+        "D04-C001"
+      ],
+      "Q1_top3": []
+    },
+    {
+      "query_id": "N3",
+      "Q1_ejecutada": true,
+      "Q0_R@1": 0.5,
+      "Q0_R@3": 1.0,
+      "Q0_R@5": 1.0,
+      "Q1_R@1": 0.5,
+      "Q1_R@3": 0.5,
+      "Q1_R@5": 1.0,
+      "Q1fb_R@1": 0.5,
+      "Q1fb_R@3": 0.5,
+      "Q1fb_R@5": 1.0,
+      "Q0_rank_A": 1,
+      "Q0_rank_B": 2,
+      "Q1_rank_A": 4.0,
+      "Q1_rank_B": 1.0,
+      "top3_comunes": 1,
+      "efecto_R@3": "degrada",
+      "Q0_top3": [
+        "D05-C002",
+        "D06-C002",
+        "D05-C001"
+      ],
+      "Q1_top3": [
+        "D06-C002",
+        "D09-C001",
+        "D08-C001"
+      ]
+    },
+    {
+      "query_id": "N4",
+      "Q1_ejecutada": false,
+      "Q0_R@1": 0.5,
+      "Q0_R@3": 1.0,
+      "Q0_R@5": 1.0,
+      "Q1_R@1": 0.0,
+      "Q1_R@3": 0.0,
+      "Q1_R@5": 0.0,
+      "Q1fb_R@1": 0.5,
+      "Q1fb_R@3": 1.0,
+      "Q1fb_R@5": 1.0,
+      "Q0_rank_A": 2,
+      "Q0_rank_B": 1,
+      "Q1_rank_A": null,
+      "Q1_rank_B": null,
+      "top3_comunes": 0,
+      "efecto_R@3": "degrada",
+      "Q0_top3": [
+        "D07-C001",
+        "D04-C001",
+        "D05-C002"
+      ],
+      "Q1_top3": []
+    },
+    {
+      "query_id": "N5",
+      "Q1_ejecutada": false,
+      "Q0_R@1": 0.5,
+      "Q0_R@3": 1.0,
+      "Q0_R@5": 1.0,
+      "Q1_R@1": 0.0,
+      "Q1_R@3": 0.0,
+      "Q1_R@5": 0.0,
+      "Q1fb_R@1": 0.5,
+      "Q1fb_R@3": 1.0,
+      "Q1fb_R@5": 1.0,
+      "Q0_rank_A": 1,
+      "Q0_rank_B": 3,
+      "Q1_rank_A": null,
+      "Q1_rank_B": null,
+      "top3_comunes": 0,
+      "efecto_R@3": "degrada",
+      "Q0_top3": [
+        "D08-C001",
+        "D02-C002",
+        "D09-C001"
+      ],
+      "Q1_top3": []
+    },
+    {
+      "query_id": "N6",
+      "Q1_ejecutada": true,
+      "Q0_R@1": 0.5,
+      "Q0_R@3": 1.0,
+      "Q0_R@5": 1.0,
+      "Q1_R@1": 0.5,
+      "Q1_R@3": 1.0,
+      "Q1_R@5": 1.0,
+      "Q1fb_R@1": 0.5,
+      "Q1fb_R@3": 1.0,
+      "Q1fb_R@5": 1.0,
+      "Q0_rank_A": 1,
+      "Q0_rank_B": 3,
+      "Q1_rank_A": 1.0,
+      "Q1_rank_B": 3.0,
+      "top3_comunes": 3,
+      "efecto_R@3": "conserva",
+      "Q0_top3": [
+        "D06-C001",
+        "D10-C002",
+        "D10-C001"
+      ],
+      "Q1_top3": [
+        "D06-C001",
+        "D10-C002",
+        "D10-C001"
+      ]
+    }
+  ],
+  "exp1_consultas": [
+    {
+      "query_id": "N1",
+      "Q0": "Si soy contribuyente, ¿hasta qué fecha tengo para presentar mi declaración jurada del mes?",
+      "Q1": null,
+      "raw": "```json\n{\n  \"query\": \"cuándo debe presentar la declaración jurada\",\n  \"intent\": \"prohibición_permiso\",\n  \"abstain\": false\n}\n```",
+      "schema_valid": false,
+      "intent_pred": "prohibición_permiso",
+      "intent_gold": "plazo",
+      "error": "'prohibición_permiso' is not one of ['plazo', 'prohibicion_permiso', 'vigencia', 'obligacion', 'derecho']"
+    },
+    {
+      "query_id": "N2",
+      "Q0": "Quiero entrar con mi auto particular a la zona reservada, ¿está permitido o está prohibido?",
+      "Q1": null,
+      "raw": "```json\n{\n  \"query\": \"¿Está permitido entrar con tu auto particular a la zona reservada?\",\n  \"intent\": \"prohibición_permiso\",\n  \"abstain\": false\n}\n```",
+      "schema_valid": false,
+      "intent_pred": "prohibición_permiso",
+      "intent_gold": "prohibicion_permiso",
+      "error": "'prohibición_permiso' is not one of ['plazo', 'prohibicion_permiso', 'vigencia', 'obligacion', 'derecho']"
+    },
+    {
+      "query_id": "N3",
+      "Q0": "Me notificaron una resolución y quiero apelarla, ¿cuántos días tengo para presentar la apelación?",
+      "Q1": "apela",
+      "raw": "```json\n{\n  \"query\": \"apela\",\n  \"intent\": \"vigencia\",\n  \"abstain\": false\n}\n```",
+      "schema_valid": true,
+      "intent_pred": "vigencia",
+      "intent_gold": "plazo",
+      "error": null
+    },
+    {
+      "query_id": "N4",
+      "Q0": "Mi empresa tiene un permiso de operación, ¿lo tengo que renovar todos los años o dura más tiempo?",
+      "Q1": null,
+      "raw": "```json\n{\n  \"query\": \"¿Qué supuesto se regula?\",\n  \"intent\": \"prohibición_permiso\",\n  \"abstain\": false\n}\n```",
+      "schema_valid": false,
+      "intent_pred": "prohibición_permiso",
+      "intent_gold": "vigencia",
+      "error": "'prohibición_permiso' is not one of ['plazo', 'prohibicion_permiso', 'vigencia', 'obligacion', 'derecho']"
+    },
+    {
+      "query_id": "N5",
+      "Q0": "¿Qué entidades están obligadas a publicar su presupuesto anual en internet?",
+      "Q1": null,
+      "raw": "```json\n{\n  \"query\": \"¿Qué entidades están obligadas a publicar su presupuesto anual en internet?\",\n  \"intent\": \"prohibición_permiso\",\n  \"abstain\": false\n}\n```",
+      "schema_valid": false,
+      "intent_pred": "prohibición_permiso",
+      "intent_gold": "obligacion",
+      "error": "'prohibición_permiso' is not one of ['plazo', 'prohibicion_permiso', 'vigencia', 'obligacion', 'derecho']"
+    },
+    {
+      "query_id": "N6",
+      "Q0": "Ya cumplí un año trabajando, ¿cuántos días de vacaciones me corresponden?",
+      "Q1": "cuántos días de vacaciones",
+      "raw": "```json\n{\n  \"query\": \"cuántos días de vacaciones\",\n  \"intent\": \"vigencia\",\n  \"abstain\": false\n}\n```",
+      "schema_valid": true,
+      "intent_pred": "vigencia",
+      "intent_gold": "derecho",
+      "error": null
+    }
+  ],
+  "exp2": [
+    {
+      "condicion": "small",
+      "target_words": 100,
+      "R@1": 0.5,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "n_fragmentos": 49
+    },
+    {
+      "condicion": "baseline",
+      "target_words": 180,
+      "R@1": 0.5,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "n_fragmentos": 20
+    },
+    {
+      "condicion": "large",
+      "target_words": 320,
+      "R@1": 0.5,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "n_fragmentos": 11
+    }
+  ],
+  "exp2_R3_por_consulta": {
+    "N1": {
+      "baseline": 1.0,
+      "large": 1.0,
+      "small": 1.0
+    },
+    "N2": {
+      "baseline": 1.0,
+      "large": 1.0,
+      "small": 1.0
+    },
+    "N3": {
+      "baseline": 1.0,
+      "large": 1.0,
+      "small": 1.0
+    },
+    "N4": {
+      "baseline": 1.0,
+      "large": 1.0,
+      "small": 1.0
+    },
+    "N5": {
+      "baseline": 1.0,
+      "large": 1.0,
+      "small": 1.0
+    },
+    "N6": {
+      "baseline": 1.0,
+      "large": 1.0,
+      "small": 1.0
+    }
+  },
+  "n_errores_top3": 1
+}
