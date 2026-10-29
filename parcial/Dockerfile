@@ -1,3 +1,4 @@
+# Entorno reproducible del examen parcial (CPU).
 # Construir:  docker build -t cc0f4-parcial .
 # Ejecutar:   docker run --rm -p 8888:8888 -v "$PWD":/workspace/parcial cc0f4-parcial
 

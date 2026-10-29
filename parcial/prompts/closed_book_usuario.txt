@@ -1,0 +1,10 @@
+INSTRUCCIÓN: Responde la pregunta sobre el Código Civil peruano con tu propio conocimiento. No se entrega evidencia.
+
+REGLAS:
+- No tienes artículos para citar: "citas" debe ser una lista vacía.
+- Si no sabes la respuesta, usa "abstencion": true y explícalo en "respuesta".
+
+FORMATO DE SALIDA: un solo objeto JSON, sin texto adicional:
+{{"respuesta": "texto breve", "citas": [], "abstencion": false}}
+
+PREGUNTA: {pregunta}

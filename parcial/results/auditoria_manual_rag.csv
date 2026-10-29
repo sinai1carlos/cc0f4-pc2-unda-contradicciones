@@ -1,0 +1,25 @@
+query_id,condicion,afirmacion,respaldada,articulo_respaldo,respuesta_correcta,citas_correctas,tipo_fallo,nota
+C01,closed_book,La plena capacidad de ejercicio empieza a los 18 años,0,,1,,NINGUNO,"Correcta según el art. 42, pero sin contexto no hay evidencia entregada que la respalde"
+C01,rag,La plena capacidad de ejercicio empieza a los 16 años,0,,0,0,UNSUPPORTED_CLAIM,"El art. 42 del contexto dice 18 años; el 16 viene de los arts. 44 y 46, que regulan otra cosa. Sin citas"
+C02,closed_book,El matrimonio hace cesar la incapacidad a los 18 años,0,,0,,UNSUPPORTED_CLAIM,El Código fija 14 (art. 42) y 16 (art. 46)
+C02,rag,El matrimonio hace cesar la incapacidad de los mayores de dieciséis años,1,cc_art_46,0.5,0,PARTIAL_RECALL,"Respaldada por el art. 46; omite los 14 años del art. 42, que no llegó al contexto. Sin citas"
+C03,closed_book,El plazo para impugnar un acuerdo es de 30 días,0,,0,,UNSUPPORTED_CLAIM,El art. 92 fija sesenta días
+C03,rag,No hay evidencia suficiente para responder,0,,0,0,GENERATION_IGNORE,El art. 92 estaba primero en el contexto y dice sesenta días; además abstencion=false contradice el texto de la respuesta
+C05,closed_book,El plazo de caducidad se extiende al siguiente día hábil,0,,0,,UNSUPPORTED_CLAIM,El art. 2007 dice lo contrario
+C05,rag,El plazo de caducidad se extiende al siguiente día hábil,0,,0,0,UNSUPPORTED_CLAIM,Respondió 'true'; contradice el art. 2007 del contexto y aplica la regla general del art. 183 inc. 5
+C06,closed_book,La acción de nulidad prescribe a los 10 años,0,,1,,NINGUNO,Correcta según el art. 2001 inc. 1; sin contexto no hay evidencia entregada
+C06,rag,La acción de nulidad prescribe a los tres años,0,,0,0,UNSUPPORTED_CLAIM,"El art. 2001 del contexto dice diez años; tres años es el plazo del inc. 3, para remuneraciones"
+C10,closed_book,No puede convertirse en propietario,0,,0,,UNSUPPORTED_CLAIM,El art. 950 lo permite; además la cita es texto libre y falla el schema
+C10,rag,No puede convertirse en propietario,0,,0,0,UNSUPPORTED_CLAIM,"Contradice el art. 950, primero en el contexto"
+C11,closed_book,La legítima de los hijos es el patrimonio,0,,0,,UNSUPPORTED_CLAIM,Sin sentido jurídico; la cita es texto libre y falla el schema
+C11,rag,La legítima de los hijos es 'el segundo',0,,0,0,UNSUPPORTED_CLAIM,El art. 725 del contexto dice dos tercios
+C17,closed_book,El juez no puede rebajar la penalidad,0,,0,,UNSUPPORTED_CLAIM,El art. 1346 lo permite; la cita es texto libre y falla el schema
+C17,rag,No hay evidencia suficiente para responder,0,,0,0,GENERATION_IGNORE,Se abstuvo con el art. 1346 primero en el contexto
+C19,closed_book,El plazo para reclamar es de 30 días,0,,0,,UNSUPPORTED_CLAIM,El art. 1514 fija seis meses para inmuebles; la cita 'vendedor' falla el schema
+C19,rag,El plazo para reclamar es de tres días,0,,0,0,RETRIEVAL_MISS,"Ningún artículo relevante llegó al contexto (1523, 1576, 1753) y el modelo no se abstuvo; 'tres días' no aparece en el contexto"
+C20,closed_book,El plazo máximo es de 30 años,0,,0,,UNSUPPORTED_CLAIM,El art. 1688 fija diez años
+C20,rag,El plazo máximo es de diez años,1,cc_art_1688,1,0,CITATION_ERROR,"Correcta y respaldada por el art. 1688, pero sin cita"
+N01,closed_book,El plazo para apelar una sentencia civil es de 30 días,0,,0,,UNSUPPORTED_CLAIM,Control negativo: debía abstenerse
+N01,rag,El plazo para apelar una sentencia civil es de cinco días,0,,0,0,UNSUPPORTED_CLAIM,"El art. 648 del contexto dice 'el plazo para apelar es de cinco días', pero para resoluciones del consejo de familia, no para sentencias; debía abstenerse"
+N02,closed_book,La remuneración mínima vital es 100000,0,,0,,UNSUPPORTED_CLAIM,Control negativo: inventó una cifra en vez de abstenerse
+N02,rag,No hay evidencia suficiente para responder,1,contexto completo,1,1,NINGUNO,Abstención correcta: el contexto (renta vitalicia y disposiciones finales) no trata la remuneración mínima

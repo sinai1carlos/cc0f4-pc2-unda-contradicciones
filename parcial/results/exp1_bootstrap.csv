@@ -1,0 +1,7 @@
+metrica,comparacion,delta_media,ic95_inf,ic95_sup,ic_cruza_cero,consultas_mejoran,consultas_empeoran
+recall@3,B - A,-0.1,-0.225,0.0,True,0,3
+recall@3,C - B,0.075,-0.025,0.225,True,3,1
+mrr,B - A,-0.0589,-0.1745,0.0472,True,3,4
+mrr,C - B,0.1206,-0.0072,0.2612,True,6,1
+ndcg@5,B - A,-0.0601,-0.1305,0.0085,True,2,5
+ndcg@5,C - B,0.0842,0.001,0.1789,False,5,2

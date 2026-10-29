@@ -1,0 +1,14 @@
+case_id,tipo,fallo_inyectado,estado,tipo_error,codigo,reintentable,vencimiento,intentos,latencia_ms,correcto
+H01,ejecucion_valida,ninguna,ok,,,,2026-11-02,1,8.6,True
+H02,ejecucion_valida,ninguna,ok,,,,2026-10-16,1,7.7,True
+H03,ejecucion_valida,ninguna,ok,,,,2026-10-31,1,7.7,True
+H04,ejecucion_valida,ninguna,ok,,,,2026-03-02,1,8.3,True
+H05,entrada_invalida,ninguna,error,validation,entrada_invalida,False,,0,0.1,True
+H06,entrada_invalida,ninguna,error,validation,entrada_invalida,False,,0,0.1,True
+H07,error_dominio,ninguna,error,domain,habiles_requiere_dias,False,,1,0.1,True
+H08,error_dominio,ninguna,error,domain,fuera_de_calendario,False,,1,7.7,True
+H09,fallo_transitorio,transitorio_una_vez,ok,,,,2026-11-02,2,59.9,True
+H10,fallo_transitorio,transitorio_siempre,error,transient,calendario_no_disponible,True,,3,151.2,True
+H11,timeout,lento,error,timeout,tiempo_agotado,True,,3,753.4,True
+H12,contrato_salida,salida_corrupta,error,output_contract,salida_invalida,False,,1,7.6,True
+H13,protocolo,ninguna,error,protocol,herramienta_no_permitida,False,,0,0.1,True

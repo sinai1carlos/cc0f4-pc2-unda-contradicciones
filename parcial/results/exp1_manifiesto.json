@@ -1,0 +1,29 @@
+{
+  "fecha_utc": "2026-10-29T08:07:03Z",
+  "python": "3.12.3",
+  "modos": {
+    "retrieval_real": true,
+    "reranker_real": true
+  },
+  "modelos": {
+    "denso": "intfloat/multilingual-e5-small + FAISS IndexFlatIP",
+    "reranker": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1"
+  },
+  "parametros": {
+    "candidate_depth": 20,
+    "rrf_constant": 60,
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "semilla": 42,
+    "bootstrap": 5000
+  },
+  "datos": {
+    "passages": 2115,
+    "consultas": 20,
+    "sha256": {
+      "corpus_cc_peru_v2.json": "1fd2de29146dfd400b35215d04f6abe10e1a1541a7264e64eb20b4a8105974c4",
+      "consultas.jsonl": "4b9bc35e0a8587ea1a57d71c44edeb3cb43a17940e167c0c9034aa28eefc0d27",
+      "qrels.json": "c9986bef7ce95a23d26602d66af73875d0b91b1fd63e21c530b81c2ac7c98d93"
+    }
+  }
+}

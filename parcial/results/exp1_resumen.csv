@@ -1,0 +1,4 @@
+condition,sistema,recall@1,recall@3,recall@5,mrr,ndcg@5,dense_ms,bm25_ms,rrf_ms,reranker_ms,total_ms,total_p95_ms
+A,denso,0.442,0.658,0.7,0.688,0.642,60.5,0.0,0.0,0.0,60.5,94.6
+B,denso + BM25 + RRF,0.392,0.558,0.65,0.629,0.582,48.7,3.3,0.1,0.0,52.1,74.0
+C,denso + BM25 + RRF + Cross-Encoder,0.542,0.633,0.675,0.75,0.666,58.0,4.2,0.1,3061.1,3123.4,4958.3

@@ -1,0 +1,16 @@
+case_id,attempt,outcome,ms
+H01,1,ok,8.3
+H02,1,ok,7.4
+H03,1,ok,7.6
+H04,1,ok,8.1
+H07,1,domain,0.1
+H08,1,domain,7.7
+H09,1,transient,0.1
+H09,2,ok,9.1
+H10,1,transient,0.1
+H10,2,transient,0.1
+H10,3,transient,0.1
+H11,1,timeout,200.6
+H11,2,timeout,200.8
+H11,3,timeout,200.8
+H12,1,ok,7.4
